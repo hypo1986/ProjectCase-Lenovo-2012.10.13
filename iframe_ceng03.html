@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联想</title>
+<link rel="stylesheet" type="text/css" href="hbcss/ra_css.css" />
+<script type="text/javascript">
+   function  onc_leftli(f)
+   {
+	  var objti=document.getElementById("lmenu0"+f);
+	  var objte=document.getElementById("lmenute0"+f);
+	  
+	 if(objte.style.display=="none")
+	 {
+		 objti.src="images/leftti_ico01.gif";
+		 objte.style.display="block";
+		 } 
+		 else
+		 {
+			 objti.src="images/leftti_ico02.gif"; 
+			 objte.style.display="none";
+			 }
+   }
+   
+   function  onc_wintw(tw)
+   {
+	  var otwti=document.getElementById("win_twti0"+tw);
+	  var otwte=document.getElementById("win_twte0"+tw);
+	  
+	 if(otwte.style.display=="none")
+	 {
+		 otwti.src="images/leftti_ico01.gif";
+		 otwte.style.display="block";
+		 } 
+		 else
+		 {
+			 otwti.src="images/leftti_ico02.gif"; 
+			 otwte.style.display="none";
+			 }
+   }
+</script>
+
+<script type="text/javascript">
+function onc_hileft()
+{
+	var t_left=document.getElementById("t_left");
+	var hi_img=document.getElementById("hi_img");
+	if(t_left.style.display=="none")
+	{
+		t_left.style.display="block";
+		hi_img.src="images/hiddenleft.gif";
+		hi_img.alt="隐藏左侧导航栏";
+		//window.location.reload(true);
+		}
+		else
+		{
+		t_left.style.display="none";
+		hi_img.src="images/showleft.gif";
+		hi_img.alt="打开左侧导航栏";
+		
+			}
+	}
+	
+</script>
+<script type="text/javascript">
+   function onc_showdep(){
+	   var odep=document.getElementById("showdepartment");
+	   if(odep.style.display=="block")
+	   {
+		   odep.style.display="none";
+		   }
+		   else
+		   {
+			   odep.style.display="block"; 
+			   }
+	   }
+	   
+	   function onc_showdep2(dep){
+	   var odep2=document.getElementById("showdepartment"+dep);
+	   if(odep2.style.display=="block")
+	   {
+		   odep2.style.display="none";
+		   }
+		   else
+		   {
+			   odep2.style.display="block"; 
+			   }
+	   }
+</script>
+<script>
+window.onload = function ()
+{
+	var oWin = document.getElementById("win");
+	var oLay = document.getElementById("overlay");	
+	//var oBtn = document.getElementsByTagName("button")[0];
+	var oBtn = document.getElementById("btnn");
+	var oClose = document.getElementById("close");
+	var oH2 = oWin.getElementsByTagName("h2")[0];
+	var bDrag = false;
+	var disX = disY = 0;
+	oBtn.onclick = function ()
+	{
+		oLay.style.display = "block";
+		oWin.style.display = "block";
+		document.body.style.overflow="hidden";
+		document.documentElement.style.overflow = "hidden"
+	};
+	oClose.onclick = function ()
+	{
+		oLay.style.display = "none";
+		oWin.style.display = "none";
+		document.body.style.overflow="";
+		document.documentElement.style.overflow = ""
+	};
+	oClose.onmousedown = function (event)
+	{
+		(event || window.event).cancelBubble = true;
+	};
+	oH2.onmousedown = function (event)
+	{		
+		var event = event || window.event;
+		bDrag = true;
+		disX = event.clientX - oWin.offsetLeft;
+		disY = event.clientY - oWin.offsetTop;		
+		this.setCapture && this.setCapture();		
+		return false
+	};
+	document.onmousemove = function (event)
+	{
+		if (!bDrag) return;
+		var event = event || window.event;
+		var iL = event.clientX - disX;
+		var iT = event.clientY - disY;
+		var maxL = document.documentElement.clientWidth - oWin.offsetWidth;
+		var maxT = document.documentElement.clientHeight - oWin.offsetHeight;		
+		iL = iL < 0 ? 0 : iL;
+		iL = iL > maxL ? maxL : iL; 		
+		iT = iT < 0 ? 0 : iT;
+		iT = iT > maxT ? maxT : iT;
+		
+		oWin.style.marginTop = oWin.style.marginLeft = 0;
+		oWin.style.left = iL + "px";
+		oWin.style.top = iT + "px";		
+		return false
+	};
+	document.onmouseup = window.onblur = oH2.onlosecapture = function ()
+	{
+		bDrag = false;				
+		oH2.releaseCapture && oH2.releaseCapture();
+	};
+};
+</script>
+<script type="text/javascript">
+   function mlc_show(m)
+   {
+	 document.getElementById("mlcapv0"+m).style.display="block";
+	   
+	   }
+	function mlc_hidden(n)
+   {
+	 document.getElementById("mlcapv0"+n).style.display="none";
+	   
+	   }
+</script>
+</head>
+
+<body>
+
+<!-- 弹出层 MAIN -->
+    <div class="win_mte">
+       
+          <div class="main_chax">
+              <div class="chax_ti">待确认变更记录</div>
+          </div>
+          
+          <div class="main_caoz">
+              <div style="margin-top:4px; text-align:left;">
+                <a href="javascript:void(0);" class="an_btn"><img src="images/biang_ico01.gif" height="12" /> 确认变更</a> 
+              </div>
+          </div>
+          
+          <!-- 列表部分 -->
+          <div class="main_tab_warp">
+    
+<div class="main_tabti">
+   <table cellspacing="0" class="tab_ti">
+     
+     <thead>
+      <tr>
+         <td class="tdhead">部件名称</td>
+         <td class="tdhead">变更前</td>
+         <td class="tdhead">变更后</td>
+         <td class="tdhead"> &nbsp;</td>
+      </tr>
+     </thead>
+      
+     <tbody> 
+      <tr>
+         <td class="td01">声卡</td>
+         <td class="td01">High Definition Audio 设备111</td>
+         <td class="td01">High Definition Audio 设备111<br/><span class="biang_color01">High Definition Audio 设备</span></td>
+         <td class="td01">&nbsp;</td>
+      </tr>
+      
+     <tr>
+         <td class="td01">内存</td>
+         <td class="td01"><span class="biang_color02">High Definition Audio 设备111</span></td>
+         <td class="td01"><span class="biang_color01">High Definition Audio 设备</span></td>
+         <td class="td01">&nbsp;</td>
+      </tr>
+      
+     </tbody> 
+   </table>
+   
+</div>
+</div>
+<!--  分页 S -->
+<div class="main_tabfy">
+
+   <img src="images/icon_page_frist1.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_prev1.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_frist.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_prev.gif" />&nbsp;&nbsp;
+   
+   [ 1 <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> ]&nbsp;&nbsp;
+   
+   <img src="images/icon_page_next.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_last.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_next1.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_last1.gif" />
+   
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <select><option value="1">10</option></select>
+</div>
+<!--  分页 O -->
+<!--  列表部分 O -->
+
+
+
+<div class="main_chax">
+              <div class="chax_ti">历史变更记录</div>
+          </div>
+
+<!-- 列表部分 -->
+          <div class="main_tab_warp">
+    
+<div class="main_tabti" style="border-top:none;">
+   <table cellspacing="0" class="tab_ti">
+     
+     <thead>
+      <tr>
+         <td class="tdhead02">变更时间<img src="images/icon14.gif" /></td>
+         <td class="tdhead">部件名称</td>
+         <td class="tdhead">变更前</td>
+         <td class="tdhead">变更后</td>
+         <td class="tdhead"> &nbsp;</td>
+      </tr>
+     </thead>
+      
+     <tbody> 
+      <tr>
+         <td class="td01">2011-09-25  06:28:35</td>
+         <td class="td01">声卡</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">&nbsp;</td>
+      </tr>
+      
+     <tr>
+         <td class="td01">2011-09-25  06:28:35</td>
+         <td class="td01">内存</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">&nbsp;</td>
+      </tr>
+      
+      <tr>
+         <td class="td01">2011-09-25  06:28:35</td>
+         <td class="td01">内存</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">&nbsp;</td>
+      </tr>
+      
+      <tr>
+         <td class="td01">2011-09-25  06:28:35</td>
+         <td class="td01">内存</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">HANHONGMAO-COMP</td>
+         <td class="td01">&nbsp;</td>
+      </tr>
+      
+     </tbody> 
+   </table>
+   
+</div>
+</div>
+<!--  分页 S -->
+<div class="main_tabfy">
+
+   <img src="images/icon_page_frist1.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_prev1.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_frist.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_prev.gif" />&nbsp;&nbsp;
+   
+   [ 1 <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> ]&nbsp;&nbsp;
+   
+   <img src="images/icon_page_next.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_last.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_next1.gif" />&nbsp;&nbsp;
+   <img src="images/icon_page_last1.gif" />
+   
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <select><option value="1">10</option></select>
+</div>
+<!--  分页 O -->
+<!--  列表部分 O -->
+
+
+           
+    </div>
+       <!-- 弹出层 MAIN END -->
+
+
+</body>
+</html>

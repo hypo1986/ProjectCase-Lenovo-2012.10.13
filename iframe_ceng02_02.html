@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联想</title>
+<link rel="stylesheet" type="text/css" href="hbcss/ra_css.css" />
+<script type="text/javascript">
+   function  onc_leftli(f)
+   {
+	  var objti=document.getElementById("lmenu0"+f);
+	  var objte=document.getElementById("lmenute0"+f);
+	  
+	 if(objte.style.display=="none")
+	 {
+		 objti.src="images/leftti_ico01.gif";
+		 objte.style.display="block";
+		 } 
+		 else
+		 {
+			 objti.src="images/leftti_ico02.gif"; 
+			 objte.style.display="none";
+			 }
+   }
+   
+   function  onc_wintw(tw)
+   {
+	  var otwti=document.getElementById("win_twti0"+tw);
+	  var otwte=document.getElementById("win_twte0"+tw);
+	  
+	 if(otwte.style.display=="none")
+	 {
+		 otwti.src="images/leftti_ico01.gif";
+		 otwte.style.display="block";
+		 } 
+		 else
+		 {
+			 otwti.src="images/leftti_ico02.gif"; 
+			 otwte.style.display="none";
+			 }
+   }
+</script>
+
+<script type="text/javascript">
+function onc_hileft()
+{
+	var t_left=document.getElementById("t_left");
+	var hi_img=document.getElementById("hi_img");
+	if(t_left.style.display=="none")
+	{
+		t_left.style.display="block";
+		hi_img.src="images/hiddenleft.gif";
+		hi_img.alt="隐藏左侧导航栏";
+		//window.location.reload(true);
+		}
+		else
+		{
+		t_left.style.display="none";
+		hi_img.src="images/showleft.gif";
+		hi_img.alt="打开左侧导航栏";
+		
+			}
+	}
+	
+</script>
+<script type="text/javascript">
+   function onc_showdep(){
+	   var odep=document.getElementById("showdepartment");
+	   if(odep.style.display=="block")
+	   {
+		   odep.style.display="none";
+		   }
+		   else
+		   {
+			   odep.style.display="block"; 
+			   }
+	   }
+	   
+	   function onc_showdep2(dep){
+	   var odep2=document.getElementById("showdepartment"+dep);
+	   if(odep2.style.display=="block")
+	   {
+		   odep2.style.display="none";
+		   }
+		   else
+		   {
+			   odep2.style.display="block"; 
+			   }
+	   }
+</script>
+<script>
+window.onload = function ()
+{
+	var oWin = document.getElementById("win");
+	var oLay = document.getElementById("overlay");	
+	//var oBtn = document.getElementsByTagName("button")[0];
+	var oBtn = document.getElementById("btnn");
+	var oClose = document.getElementById("close");
+	var oH2 = oWin.getElementsByTagName("h2")[0];
+	var bDrag = false;
+	var disX = disY = 0;
+	oBtn.onclick = function ()
+	{
+		oLay.style.display = "block";
+		oWin.style.display = "block";
+		document.body.style.overflow="hidden";
+		document.documentElement.style.overflow = "hidden"
+	};
+	oClose.onclick = function ()
+	{
+		oLay.style.display = "none";
+		oWin.style.display = "none";
+		document.body.style.overflow="";
+		document.documentElement.style.overflow = ""
+	};
+	oClose.onmousedown = function (event)
+	{
+		(event || window.event).cancelBubble = true;
+	};
+	oH2.onmousedown = function (event)
+	{		
+		var event = event || window.event;
+		bDrag = true;
+		disX = event.clientX - oWin.offsetLeft;
+		disY = event.clientY - oWin.offsetTop;		
+		this.setCapture && this.setCapture();		
+		return false
+	};
+	document.onmousemove = function (event)
+	{
+		if (!bDrag) return;
+		var event = event || window.event;
+		var iL = event.clientX - disX;
+		var iT = event.clientY - disY;
+		var maxL = document.documentElement.clientWidth - oWin.offsetWidth;
+		var maxT = document.documentElement.clientHeight - oWin.offsetHeight;		
+		iL = iL < 0 ? 0 : iL;
+		iL = iL > maxL ? maxL : iL; 		
+		iT = iT < 0 ? 0 : iT;
+		iT = iT > maxT ? maxT : iT;
+		
+		oWin.style.marginTop = oWin.style.marginLeft = 0;
+		oWin.style.left = iL + "px";
+		oWin.style.top = iT + "px";		
+		return false
+	};
+	document.onmouseup = window.onblur = oH2.onlosecapture = function ()
+	{
+		bDrag = false;				
+		oH2.releaseCapture && oH2.releaseCapture();
+	};
+};
+</script>
+<script type="text/javascript">
+   function mlc_show(m)
+   {
+	 document.getElementById("mlcapv0"+m).style.display="block";
+	   
+	   }
+	function mlc_hidden(n)
+   {
+	 document.getElementById("mlcapv0"+n).style.display="none";
+	   
+	   }
+</script>
+</head>
+
+<body>
+
+<!-- 软件信息列表 弹出层 MAIN -->
+       <div class="win_mte">
+          <!--  层上部分 S -->
+           <div class="win_ctjtop">
+              <div class="win_ctjtab">
+                  <table width="100%" cellspacing="0">
+                      <tr>
+                         <td><b>包标识：</b>DELL无线网卡实用程序</td>
+                         <td><b>包名称：</b>4.170.4.18</td>
+                         <td><b>分发日期：</b>DELL INC.</td>
+                      </tr>
+                  </table>
+              </div>
+
+              <div class="win_ctjtab02">
+              
+                  <table width="100%" cellspacing="0">
+                      <tr>
+                         <td colspan="4" align="right" class="flag_hengb02"><a href="#" class="tabl">查看分布详情</a> &nbsp;</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right" width="240">包名称：</th>
+                         <td align="left">232322323</td>
+                         <th align="right" width="140">说明：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">操作系统：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">优先级：</th>
+                         <td align="left">kjjhjkhkhk12123</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">文件（部署在客户端计算机上）：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">行动：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">使用这个分发包：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">提示用户：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">安装完成后需要用户操作：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">文件名：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">唯一标识符：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">摘要 MD5/Hexa：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">总面积：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">片段大小(最小1KB)：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                      <tr>
+                         <th align="right">碎片数量：</th>
+                         <td align="left">232322323</td>
+                         <th align="right">部署估计耗时：</th>
+                         <td align="left">kjjhjkhkhk</td>
+                      </tr>
+                      
+                  </table>
+              </div>
+              
+           </div>
+           <!--  层上部分 O -->
+           
+           
+       </div>
+<!-- 软件信息列表 弹出层 MAIN END -->
+
+
+</body>
+</html>

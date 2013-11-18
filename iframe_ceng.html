@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联想</title>
+<link rel="stylesheet" type="text/css" href="hbcss/ra_css.css" />
+<script type="text/javascript">
+   function  onc_leftli(f)
+   {
+	  var objti=document.getElementById("lmenu0"+f);
+	  var objte=document.getElementById("lmenute0"+f);
+	  
+	 if(objte.style.display=="none")
+	 {
+		 objti.src="images/leftti_ico01.gif";
+		 objte.style.display="block";
+		 } 
+		 else
+		 {
+			 objti.src="images/leftti_ico02.gif"; 
+			 objte.style.display="none";
+			 }
+   }
+   
+   function  onc_wintw(tw)
+   {
+	  var otwti=document.getElementById("win_twti0"+tw);
+	  var otwte=document.getElementById("win_twte0"+tw);
+	  
+	 if(otwte.style.display=="none")
+	 {
+		 otwti.src="images/leftti_ico01.gif";
+		 otwte.style.display="block";
+		 } 
+		 else
+		 {
+			 otwti.src="images/leftti_ico02.gif"; 
+			 otwte.style.display="none";
+			 }
+   }
+</script>
+
+<script type="text/javascript">
+function onc_hileft()
+{
+	var t_left=document.getElementById("t_left");
+	var hi_img=document.getElementById("hi_img");
+	if(t_left.style.display=="none")
+	{
+		t_left.style.display="block";
+		hi_img.src="images/hiddenleft.gif";
+		hi_img.alt="隐藏左侧导航栏";
+		//window.location.reload(true);
+		}
+		else
+		{
+		t_left.style.display="none";
+		hi_img.src="images/showleft.gif";
+		hi_img.alt="打开左侧导航栏";
+		
+			}
+	}
+	
+</script>
+<script type="text/javascript">
+   function onc_showdep(){
+	   var odep=document.getElementById("showdepartment");
+	   if(odep.style.display=="block")
+	   {
+		   odep.style.display="none";
+		   }
+		   else
+		   {
+			   odep.style.display="block"; 
+			   }
+	   }
+	   
+	   function onc_showdep2(dep){
+	   var odep2=document.getElementById("showdepartment"+dep);
+	   if(odep2.style.display=="block")
+	   {
+		   odep2.style.display="none";
+		   }
+		   else
+		   {
+			   odep2.style.display="block"; 
+			   }
+	   }
+</script>
+<script>
+window.onload = function ()
+{
+	var oWin = document.getElementById("win");
+	var oLay = document.getElementById("overlay");	
+	//var oBtn = document.getElementsByTagName("button")[0];
+	var oBtn = document.getElementById("btnn");
+	var oClose = document.getElementById("close");
+	var oH2 = oWin.getElementsByTagName("h2")[0];
+	var bDrag = false;
+	var disX = disY = 0;
+	oBtn.onclick = function ()
+	{
+		oLay.style.display = "block";
+		oWin.style.display = "block";
+		document.body.style.overflow="hidden";
+		document.documentElement.style.overflow = "hidden"
+	};
+	oClose.onclick = function ()
+	{
+		oLay.style.display = "none";
+		oWin.style.display = "none";
+		document.body.style.overflow="";
+		document.documentElement.style.overflow = ""
+	};
+	oClose.onmousedown = function (event)
+	{
+		(event || window.event).cancelBubble = true;
+	};
+	oH2.onmousedown = function (event)
+	{		
+		var event = event || window.event;
+		bDrag = true;
+		disX = event.clientX - oWin.offsetLeft;
+		disY = event.clientY - oWin.offsetTop;		
+		this.setCapture && this.setCapture();		
+		return false
+	};
+	document.onmousemove = function (event)
+	{
+		if (!bDrag) return;
+		var event = event || window.event;
+		var iL = event.clientX - disX;
+		var iT = event.clientY - disY;
+		var maxL = document.documentElement.clientWidth - oWin.offsetWidth;
+		var maxT = document.documentElement.clientHeight - oWin.offsetHeight;		
+		iL = iL < 0 ? 0 : iL;
+		iL = iL > maxL ? maxL : iL; 		
+		iT = iT < 0 ? 0 : iT;
+		iT = iT > maxT ? maxT : iT;
+		
+		oWin.style.marginTop = oWin.style.marginLeft = 0;
+		oWin.style.left = iL + "px";
+		oWin.style.top = iT + "px";		
+		return false
+	};
+	document.onmouseup = window.onblur = oH2.onlosecapture = function ()
+	{
+		bDrag = false;				
+		oH2.releaseCapture && oH2.releaseCapture();
+	};
+};
+</script>
+<script type="text/javascript">
+   function mlc_show(m)
+   {
+	 document.getElementById("mlcapv0"+m).style.display="block";
+	   
+	   }
+	function mlc_hidden(n)
+   {
+	 document.getElementById("mlcapv0"+n).style.display="none";
+	   
+	   }
+</script>
+</head>
+
+<body>
+
+<!-- 弹出层 MAIN -->
+       <div class="win_mte">
+       
+           <!-- 弹出层 MAIN  RIGHT -->
+           <div class="win_mter">
+               <div class="win_mtrtop"><span><a href="#" class="tabl"><img src="images/excel.gif" /> 导出</a></span></div>
+               <div class="win_mtrtab">
+                  <table cellspacing="1">
+                     <tr>
+                        <th>名字：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>域名：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>Userdomain：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>IP地址：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>用户：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>交换：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>操作系统名称：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>操作系统版本：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>服务包：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>Windows用户：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>Windows认证：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>Windows键：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>用户代理：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>内存：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>最新清单：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th>最后链接：</td>
+                        <td>WORKGROUP</td>
+                     </tr>
+                     <tr>
+                        <th>UUID：</td>
+                        <td>VSDFSDDFSD-23233</td>
+                        <th></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </div>
+               
+            <!--  弹出层右侧 展开合并 模块 -->   
+               <div class="win_mtrti">计算机<span><img style="cursor:pointer;" id="win_twti02" onclick="onc_wintw(2)"  src="images/leftti_ico01.gif" /></span></div>
+               
+               <div class="win_tab_warp" id="win_twte02">
+                        <div class="showdepartment2" id="showdepartment2">
+                            <ul style="height:100px; overflow:auto;">
+                                <li><input name="" type="checkbox" value="" /> 账户信息TAG</li>
+                                <li><input name="" type="checkbox" value="" /> 最新清单</li>
+                                <li><input name="" type="checkbox" value="" /> 计算机</li>
+                                <li><input name="" type="checkbox" value="" /> 用户</li>
+                                <li><input name="" type="checkbox" value="" /> 操作系统</li>
+                                <li><input name="" type="checkbox" value="" /> 内存（MB）</li>
+                                <li><input name="" type="checkbox" value="" /> CPU(MHZ)</li>
+                                <li><input name="" type="checkbox" value="" /> 模型</li>
+                            </ul>
+                            <ul style="padding-top:5px;">
+                                <li><input name="SUB_FILTRE" class="button" id="SUB_FILTRE" type="submit" value="确定"/></li>
+                            </ul>
+                        </div>
+                    <div class="win_tabti">
+   <table cellspacing="0" class="tab_ti">
+     
+      <tr>
+         <td class="tdhead03"><input type="checkbox" /></td>
+         <td class="tdhead">包标识</td>
+         <td class="tdhead">包名称</td>
+         <td class="tdhead02">优先级<img src="images/icon14.gif" /></td>
+         <td class="tdhead">操作系统<img src="images/icon14_1.gif" /></td>
+         <td class="tdhead">包大小</td>
+         <td class="tdhead">描述</td>
+         <td class="tdhead"><img src="images/tab_ico01.gif" style="cursor:pointer;" onclick="onc_showdep2(2)" /></td>
+         
+      </tr>
+      
+      <tr>
+         <td class="td01"><input type="checkbox" /></td>
+         <td class="td01">20110202</td>
+         <td class="td01"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td01">5</td> 
+         <td class="td01">windows 7</td>
+         <td class="td01">1212</td>
+         <td class="td01">最受欢迎的软件..</td>
+         <td class="td01"></td>
+         
+      </tr>
+      
+      <tr>
+         <td class="td02"><input type="checkbox" /></td>
+         <td class="td02">20110202</td>
+         <td class="td02"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td02">5</td> 
+         <td class="td02">windows 7</td>
+         <td class="td02">1212</td>
+         <td class="td02">最受欢迎的软件..</td>
+         <td class="td02"></td>
+         
+      </tr>
+      
+      <tr>
+         <td class="td01"><input type="checkbox" /></td>
+         <td class="td01">20110202</td>
+         <td class="td01"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td01">5</td> 
+         <td class="td01">windows 7</td>
+         <td class="td01">1212</td>
+         <td class="td01">最受欢迎的软件..</td>
+         <td class="td01"></td>
+         
+      </tr>
+      
+      <tr>
+         <td class="td02"><input type="checkbox" /></td>
+         <td class="td02">20110202</td>
+         <td class="td02"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td02">5</td> 
+         <td class="td02">windows 7</td>
+         <td class="td02">1212</td>
+         <td class="td02">最受欢迎的软件..</td>
+         <td class="td02"></td>
+         
+      </tr>
+      
+   </table>
+   
+                  </div>
+                </div>
+   <!--  弹出层右侧 展开合并 模块 END -->  
+    
+                <!--  弹出层右侧 展开合并 模块 -->   
+               <div class="win_mtrti">中央处理器<span><img style="cursor:pointer;" id="win_twti01" onclick="onc_wintw(1)"  src="images/leftti_ico01.gif" /></span></div>
+               
+               <div class="win_tab_warp" id="win_twte01">
+                        <div class="showdepartment2" id="showdepartment3">
+                            <ul style="height:100px; overflow:auto;">
+                                <li><input name="" type="checkbox" value="" /> 账户信息TAG</li>
+                                <li><input name="" type="checkbox" value="" /> 最新清单</li>
+                                <li><input name="" type="checkbox" value="" /> 计算机</li>
+                                <li><input name="" type="checkbox" value="" /> 用户</li>
+                                <li><input name="" type="checkbox" value="" /> 操作系统</li>
+                                <li><input name="" type="checkbox" value="" /> 内存（MB）</li>
+                                <li><input name="" type="checkbox" value="" /> CPU(MHZ)</li>
+                                <li><input name="" type="checkbox" value="" /> 模型</li>
+                            </ul>
+                            <ul style="padding-top:5px;">
+                                <li><input name="SUB_FILTRE" class="button" id="SUB_FILTRE" type="submit" value="确定"/></li>
+                            </ul>
+                        </div>
+                    <div class="win_tabti">
+   <table cellspacing="1" class="tab_ti">
+     
+      <tr>
+         <td><input type="checkbox" /></td>
+         <td>包标识</td>
+         <td>包名称</td>
+         <td>优先级<img src="images/icon14.gif" /></td>
+         <td>操作系统<img src="images/icon14_1.gif" /></td>
+         <td>包大小</td>
+         <td>描述</td>
+         <td><img src="images/tab_ico01.gif" style="cursor:pointer;" onclick="onc_showdep2(3)" /></td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+      </tr>
+      
+      <tr>
+         <td class="td01"><input type="checkbox" /></td>
+         <td class="td01">20110202</td>
+         <td class="td01"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td01">5</td> 
+         <td class="td01">windows 7</td>
+         <td class="td01">1212</td>
+         <td class="td01">最受欢迎的软件..</td>
+         <td class="td01"></td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+      </tr>
+      
+      <tr>
+         <td class="td02"><input type="checkbox" /></td>
+         <td class="td02">20110202</td>
+         <td class="td02"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td02">5</td> 
+         <td class="td02">windows 7</td>
+         <td class="td02">1212</td>
+         <td class="td02">最受欢迎的软件..</td>
+         <td class="td02"></td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+      </tr>
+      
+      <tr>
+         <td class="td01"><input type="checkbox" /></td>
+         <td class="td01">20110202</td>
+         <td class="td01"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td01">5</td> 
+         <td class="td01">windows 7</td>
+         <td class="td01">1212</td>
+         <td class="td01">最受欢迎的软件..</td>
+         <td class="td01"></td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+      </tr>
+      
+      <tr>
+         <td class="td02"><input type="checkbox" /></td>
+         <td class="td02">20110202</td>
+         <td class="td02"><a href="#" class="tabl">sdfsdfdsf</a></td>
+         <td class="td02">5</td> 
+         <td class="td02">windows 7</td>
+         <td class="td02">1212</td>
+         <td class="td02">最受欢迎的软件..</td>
+         <td class="td02"></td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+         <td class="td01">20110202</td><td class="td01">20110202</td><td class="td01">20110202</td>
+      </tr>
+      
+   </table>
+   
+                  </div>
+                </div>
+   <!--  弹出层右侧 展开合并 模块 END -->
+              
+           </div>
+           <!-- 弹出层 MAIN  RIGHT END -->
+           
+           <!-- 弹出层 MAIN  LEFT -->
+           <div class="win_mtel">
+              <h3><img src="images/icon21.gif" /> 设备信息</h3>
+              <ul>
+                 <li><a href="#" class="win_mlli02"><img src="images/icon22.gif" /> 所有信息</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon23.gif" /> 计算机</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon24.gif" /> 中央处理器</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon25.gif" /> 内存</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon26.gif" /> 硬盘</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon27.gif" /> 逻辑驱动器</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon28.gif" /> 主板</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon29.gif" /> 监视设备</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon30.gif" /> 网络适配器</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon31.gif" /> BIOS</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon32.gif" /> 显卡</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon33.gif" /> 音频设备</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon34.gif" /> 控制器</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon35.gif" /> 插槽</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon36.gif" /> 端口</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon37.gif" /> 输入设备</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon38.gif" /> 打印机</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon39.gif" /> 调试解调器</a></li>
+                 <li><a href="#" class="win_mlli01"><img src="images/icon40.gif" /> 软件</a></li>
+              </ul>
+           </div>
+           <!-- 弹出层 MAIN  LEFT  END -->
+           
+       </div>
+       <!-- 弹出层 MAIN END -->
+
+
+</body>
+</html>

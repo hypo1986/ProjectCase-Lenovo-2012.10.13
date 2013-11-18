@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联想</title>
+<link rel="stylesheet" type="text/css" href="hbcss/ra_css.css" />
+<script type="text/javascript">
+   function  onc_leftli(f)
+   {
+	  var objti=document.getElementById("lmenu0"+f);
+	  var objte=document.getElementById("lmenute0"+f);
+	  
+	 if(objte.style.display=="none")
+	 {
+		 objti.src="images/leftti_ico01.gif";
+		 objte.style.display="block";
+		 } 
+		 else
+		 {
+			 objti.src="images/leftti_ico02.gif"; 
+			 objte.style.display="none";
+			 }
+   }
+   
+   function  onc_wintw(tw)
+   {
+	  var otwti=document.getElementById("win_twti0"+tw);
+	  var otwte=document.getElementById("win_twte0"+tw);
+	  
+	 if(otwte.style.display=="none")
+	 {
+		 otwti.src="images/leftti_ico01.gif";
+		 otwte.style.display="block";
+		 } 
+		 else
+		 {
+			 otwti.src="images/leftti_ico02.gif"; 
+			 otwte.style.display="none";
+			 }
+   }
+</script>
+
+<script type="text/javascript">
+function onc_hileft()
+{
+	var t_left=document.getElementById("t_left");
+	var hi_img=document.getElementById("hi_img");
+	if(t_left.style.display=="none")
+	{
+		t_left.style.display="block";
+		hi_img.src="images/hiddenleft.gif";
+		hi_img.alt="隐藏左侧导航栏";
+		//window.location.reload(true);
+		document.getElementById("left_tdw").style.width=180 + "px";
+		document.getElementById("t_left").style.width=180 + "px";
+		}
+		else
+		{
+		t_left.style.display="none";
+		hi_img.src="images/showleft.gif";
+		hi_img.alt="打开左侧导航栏";
+		document.getElementById("left_tdw").style.width=0 + "px";
+		document.getElementById("t_left").style.width=0 + "px";
+		
+			}
+	}
+	
+</script>
+<script type="text/javascript">
+   function onc_showdep(){
+	   var odep=document.getElementById("showdepartment");
+	   if(odep.style.display=="block")
+	   {
+		   odep.style.display="none";
+		   }
+		   else
+		   {
+			   odep.style.display="block"; 
+			   }
+	   }
+	   
+	   function onc_showdep2(dep){
+	   var odep2=document.getElementById("showdepartment"+dep);
+	   if(odep2.style.display=="block")
+	   {
+		   odep2.style.display="none";
+		   }
+		   else
+		   {
+			   odep2.style.display="block"; 
+			   }
+	   }
+</script>
+<script>
+window.onload = function ()
+{
+	var oWin = document.getElementById("win");
+	var oLay = document.getElementById("overlay");	
+	//var oBtn = document.getElementsByTagName("button")[0];
+	var oBtn = document.getElementById("btnn");
+	var oClose = document.getElementById("close");
+	var oH2 = oWin.getElementsByTagName("h2")[0];
+	var bDrag = false;
+	var disX = disY = 0;
+	oBtn.onclick = function ()
+	{
+		oLay.style.display = "block";
+		oWin.style.display = "block";
+		document.body.style.overflow="hidden";
+		document.documentElement.style.overflow = "hidden"
+		
+		oWin.style.width = 880 + "px";
+		oWin.style.height = 520 + "px";
+
+		oWin.style.marginTop = -262 + "px";
+		oWin.style.marginBottom = 0 + "px";
+		oWin.style.marginRight = 0 + "px";
+		oWin.style.marginLeft = -442 + "px";
+	
+	};
+	oClose.onclick = function ()
+	{
+		oLay.style.display = "none";
+		oWin.style.display = "none";
+		document.body.style.overflow="";
+		document.documentElement.style.overflow = ""
+	};
+	oClose.onmousedown = function (event)
+	{
+		(event || window.event).cancelBubble = true;
+	};
+	oH2.onmousedown = function (event)
+	{		
+		var event = event || window.event;
+		bDrag = true;
+		disX = event.clientX - oWin.offsetLeft;
+		disY = event.clientY - oWin.offsetTop;		
+		this.setCapture && this.setCapture();		
+		return false
+	};
+	document.onmousemove = function (event)
+	{
+		if (!bDrag) return;
+		var event = event || window.event;
+		var iL = event.clientX - disX;
+		var iT = event.clientY - disY;
+		var maxL = document.documentElement.clientWidth - oWin.offsetWidth;
+		var maxT = document.documentElement.clientHeight - oWin.offsetHeight;		
+		iL = iL < 0 ? 0 : iL;
+		iL = iL > maxL ? maxL : iL; 		
+		iT = iT < 0 ? 0 : iT;
+		iT = iT > maxT ? maxT : iT;
+		
+		oWin.style.marginTop = oWin.style.marginLeft = 0;
+		oWin.style.left = iL + "px";
+		oWin.style.top = iT + "px";		
+		return false
+	};
+	document.onmouseup = window.onblur = oH2.onlosecapture = function ()
+	{
+		bDrag = false;				
+		oH2.releaseCapture && oH2.releaseCapture();
+	};
+};
+</script>
+<script type="text/javascript">
+   function mlc_show(m)
+   {
+	 document.getElementById("mlcapv0"+m).style.display="block";
+	   
+	   }
+	function mlc_hidden(n)
+   {
+	 document.getElementById("mlcapv0"+n).style.display="none";
+	   
+	   }
+</script>
+</head>
+
+<body>
+<div style="width:1000px; margin:0 auto;">
+<table width="100%" cellpadding="0" cellspacing="0" height="75" background="images/top_cenbg.jpg">
+  <tr>
+     <td width="778" background="images/top_leftbg.jpg" align="left">
+       <div class="top_left"><a href="#"><img src="images/logo.jpg" border="0" /></a></div>
+     </td>
+     <td align="right" class="top_right">
+        <span class="top_text"><a href="#" class="topl">中文</a> | <a href="#" class="topl">帮助</a> | <a href="#" class="topl">注销</a> [admin]</span>
+     </td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+   <tr>
+       <td class="left_td" id="left_tdw" valign="top">
+<div id="t_left" class="left_wrap">
+
+<div class="leftdiv">
+   <div class="menuti">
+       资产收集<span><img style="cursor:pointer;" id="lmenu01" onclick="onc_leftli(1)" src="images/leftti_ico01.gif" /></span>
+   </div>
+   <div id="lmenute01" class="menute">
+       <ul>
+         <li onmousemove="mlc_show(1)" onmouseout="mlc_hidden(1)">
+            <a href="javascript:void(0);" class="leftm_li03" id="btnn"><img src="images/leftte_ico01.gif"/> 硬件信息</a>
+            <ul id="mlcapv01" style="display:none;">
+               <li><img src="images/dian01.gif" /> <a href="#">设备信息列表</a></li>
+               <li><img src="images/dian01.gif" /> <a href="#">资产变更列表</a></li>
+            </ul>
+         </li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico02.gif" /> 软件信息</a></li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico03.gif" /> 配置</a></li>
+       </ul>
+   </div>
+</div>
+
+<div class="leftdiv">
+   <div class="menuti">
+       软件分发<span><img style="cursor:pointer;" id="lmenu02" onclick="onc_leftli(2)" src="images/leftti_ico01.gif" /></span>
+   </div>
+   <div id="lmenute02" class="menute">
+       <ul>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico04.gif"/> 创建包</a></li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico05.gif" /> 分发包</a></li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico06.gif" /> 分发状态</a></li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico03.gif" /> 配置</a></li>
+       </ul>
+   </div>
+</div>
+
+<div class="leftdiv">
+   <div class="menuti">
+       补丁管理<span><img style="cursor:pointer;" id="lmenu03" onclick="onc_leftli(3)" src="images/leftti_ico01.gif" /></span>
+   </div>
+   <div id="lmenute03" class="menute">
+       <ul>
+         <li class="lmlibg" onmousemove="mlc_show(2)" onmouseout="mlc_hidden(2)">
+            <a href="javascript:void(0);" class="leftm_li01"><img src="images/leftte_ico07.gif"/> 补丁分发策略</a>
+            <ul id="mlcapv02" style="display:none;">
+               <li><img src="images/dian01.gif" /> <a href="#">创建补丁策略</a></li>
+               <li><img src="images/dian01.gif" /> <a href="#">分发补丁策略</a></li>
+            </ul>
+         </li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico03.gif" /> 配置</a></li>
+       </ul>
+   </div>
+</div>
+
+<div class="leftdiv">
+   <div class="menuti">
+       组管理<span><img style="cursor:pointer;" id="lmenu04" onclick="onc_leftli(4)" src="images/leftti_ico01.gif" /></span>
+   </div>
+   <div id="lmenute04" class="menute">
+       <ul>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico08.gif"/> 添加虚拟组</a></li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico09.gif"/> 虚拟组列表</a></li>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico03.gif" /> 配置</a></li>
+       </ul>
+   </div>
+</div>
+
+<div class="leftdiv">
+   <div class="menuti">
+       权限管理<span><img style="cursor:pointer;" id="lmenu05" onclick="onc_leftli(5)" src="images/leftti_ico01.gif" /></span>
+   </div>
+   <div id="lmenute05" class="menute">
+       <ul>
+         <li class="lmlibg" onmousemove="mlc_show(3)" onmouseout="mlc_hidden(3)">
+            <a href="javascript:void(0);" class="leftm_li01"><img src="images/leftte_ico10.gif"/> 角色管理</a>
+            <ul id="mlcapv03" style="display:none;">
+               <li><img src="images/dian01.gif" /> <a href="#">添加角色</a></li>
+               <li><img src="images/dian01.gif" /> <a href="#">角色列表</a></li>
+            </ul>
+         </li>
+         <li class="lmlibg" onmousemove="mlc_show(4)" onmouseout="mlc_hidden(4)">
+             <a href="javascript:void(0);" class="leftm_li01"><img src="images/leftte_ico11.gif"/> 用户权限管理</a>
+             <ul id="mlcapv04" style="display:none;">
+               <li><img src="images/dian01.gif" /> <a href="#">用户授权</a></li>
+               <li><img src="images/dian01.gif" /> <a href="#">用户列表</a></li>
+            </ul>
+         </li>
+       </ul>
+   </div>
+</div>
+
+<div class="leftdiv">
+   <div class="menuti">
+       系统设置<span><img style="cursor:pointer;" id="lmenu06" onclick="onc_leftli(6)" src="images/leftti_ico01.gif" /></span>
+   </div>
+   <div id="lmenute06" class="menute">
+       <ul>
+         <li><a href="javascript:void(0);" class="leftm_li02"><img src="images/leftte_ico03.gif" /> 配置</a></li>
+       </ul>
+   </div>
+</div>
+
+</div>
+       </td>
+       <td class="hleft" valign="middle">
+
+        <img onclick="onc_hileft()" style="cursor:pointer;" src="images/hiddenleft.gif" alt="隐藏左侧导航栏" id="hi_img" border="0" />
+
+       </td>
+       <td valign="top">
+         
+
+<div class="main_chax">
+   <!--  硬件资产总揽 S  -->
+   <div class="home_topti">硬件资产总揽</div>
+   <div class="chax_te">
+   
+       <div class="home_topl"><img src="images/home_tu01.jpg" /></div>
+       <div class="home_topr">
+          <ul>
+             <li><img src="images/home_xtu01.gif" /> Machines in base</li>
+             <li><img src="images/home_xtu02.gif" /> Seen machines</li>
+             <li><img src="images/home_xtu03.gif" /> Number of inventory machines today</li>
+             <li><img src="images/home_xtu04.gif" /> Number of SNMP devices</li>
+          </ul>
+       </div>
+      
+   </div>
+   <!--  硬件资产总揽 END  -->
+   <!--  资产概要 S  -->
+   <div class="home_topti">资产概要</div>
+   <div class="chax_te">
+   
+       <div class="home_cenl">
+          <a href="#">台式机<br/><img src="images/home_zcgy_tu01.jpg" /></a>
+          <span><a href="#">1000</a></span>
+       </div>
+       <div class="home_cenr"><img src="images/home_shut.gif" /></div>
+       
+       <div class="home_cenl">
+          <a href="#">笔记本<br/><img src="images/home_zcgy_tu02.jpg" /></a>
+          <span><a href="#">1000</a></span>
+       </div>
+       <div class="home_cenr"><img src="images/home_shut.gif" /></div>
+       
+       <div class="home_cenl">
+          <a href="#">显示器<br/><img src="images/home_zcgy_tu03.jpg" /></a>
+          <span><a href="#">1000</a></span>
+       </div>
+       <div class="home_cenr"><img src="images/home_shut.gif" /></div>
+       
+       <div class="home_cenl">
+          <a href="#">打印机<br/><img src="images/home_zcgy_tu04.jpg" /></a>
+          <span><a href="#">1000</a></span>
+       </div>
+       <div class="home_cenr"><img src="images/home_shut.gif" /></div>
+       
+       <div class="home_cenl">
+          <a href="#">SNMP设备<br/><img src="images/home_zcgy_tu05.jpg" /></a>
+          <span><a href="#">1000</a></span>
+       </div>
+
+   </div>
+   <!--  资产概要 END  -->
+   <!--  代办事宜 S  -->
+   <div class="home_topti">代办事宜</div>
+   <div class="chax_te">
+      <div class="home_bot">
+       <table>
+           <tr>
+              <th colspan="5">1.资产变更确认</th>
+           </tr>
+           <tr>
+              <td><img src="images/home_tabdian.gif" /></td>
+              <td><a href="#" class="tabl">2011061411</a></td>
+              <td>打印机</td>
+              <td>SMARTPHONE</td>
+              <td>07/21/2011 18:32:02</td>
+           </tr>
+           <tr>
+              <td><img src="images/home_tabdian.gif" /></td>
+              <td><a href="#" class="tabl">2011061411</a></td>
+              <td>打印机</td>
+              <td>SMARTPHONE</td>
+              <td>07/21/2011 18:32:02</td>
+           </tr>
+          <tr>
+              <td><img src="images/home_tabdian.gif" /></td>
+              <td><a href="#" class="tabl">2011061411</a></td>
+              <td>打印机</td>
+              <td>SMARTPHONE</td>
+              <td>07/21/2011 18:32:02</td>
+           </tr>
+       </table>
+      </div>
+   </div>
+   <!--  代办事宜 END  -->
+   
+</div>
+
+       </td>
+       <td class="hright">&nbsp;</td>
+   </tr>
+   
+</table>
+
+
+<table width="100%" cellpadding="0" cellspacing="0" height="69" background="images/bottombg.jpg">
+  <tr>
+     
+     <td align="center" class="bot_text">
+        版权所有：1998-2011 联想集团 | 法律公告 | 隐私保护 京ICP备05000462
+     </td>
+  </tr>
+</table>
+
+</div>
+
+<!--  弹出层 S -->
+<div id="overlay"></div>
+
+<div id="win">
+   
+   <div class="win_topw"><div class="win_top"></div></div>
+   
+   <div class="win_mainw">
+     <div class="win_main">
+       <h2>
+         <b>设备信息详情</b>
+         <span id="close"><img src="images/close.gif" /></span>
+       </h2>
+      
+       <div class="win_ifrwrap">
+         <iframe src="iframe_ceng.html" scrolling="no" height="485" width="100%" frameborder="0"></iframe>
+         
+       </div>
+      
+     </div>
+   </div>
+   
+   <div class="win_botw"><div class="win_bot"></div></div>
+</div>
+<!--  弹出层 O -->
+
+</body>
+</html>
